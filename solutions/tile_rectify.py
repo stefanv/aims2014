@@ -17,7 +17,9 @@ target = np.array([[0, 0],
                    [400, 400]])
 
 tf = estimate_transform('projective', source, target)
-H = tf.params
+H = tf.params   # in older versions of skimage, this should be
+                # H = tf._matrix
+
 print H
 
 # H = np.array([[  3.04026872e+00,   1.04929628e+00,  -4.67743998e+02],
